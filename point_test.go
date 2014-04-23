@@ -15,7 +15,7 @@ func TestPoint2Distance(t *testing.T) {
 
 	for _, tt := range tests {
 		if actual := tt.p1.Distance(&tt.p2); actual != tt.expected {
-			t.Errorf("Point2Distance: expected = %f, actual = %f", tt.expected, actual)
+			t.Errorf("Point2.Distance: expected = %f, actual = %f", tt.expected, actual)
 		}
 	}
 }
@@ -31,7 +31,7 @@ func TestPoint3Distance(t *testing.T) {
 
 	for _, tt := range tests {
 		if actual := tt.p1.Distance(&tt.p2); actual != tt.expected {
-			t.Errorf("Point3Distance: expected = %f, actual = %f", tt.expected, actual)
+			t.Errorf("Point3.Distance: expected = %f, actual = %f", tt.expected, actual)
 		}
 	}
 }
