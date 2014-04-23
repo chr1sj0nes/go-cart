@@ -1,6 +1,8 @@
 package cart
 
-import ()
+import (
+	"fmt"
+)
 
 // Vector in 2D space
 type Vector2 [2]float64
@@ -8,6 +10,10 @@ type Vector2 [2]float64
 // Vector dot product
 func (v1 *Vector2) Dot(v2 *Vector2) float64 {
 	return v1[0]*v2[0] + v1[1]*v2[1]
+}
+
+func (v *Vector2) String() string {
+	return fmt.Sprintf("[%f, %f]", v[0], v[1])
 }
 
 // Vector in 3D space
@@ -24,4 +30,8 @@ func (v1 *Vector3) X(v2 *Vector3) *Vector3 {
 	vy := v1[0]*v2[2] - v1[2]*v2[0]
 	vz := v1[0]*v2[1] - v1[1]*v2[0]
 	return &Vector3{vx, vy, vz}
+}
+
+func (v *Vector3) String() string {
+	return fmt.Sprintf("[%f, %f, %f]", v[0], v[1], v[2])
 }
