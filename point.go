@@ -2,7 +2,6 @@ package cart
 
 import (
 	"fmt"
-	"math"
 )
 
 // Point in 2D space
@@ -15,8 +14,7 @@ func (p1 *Point2) To(p2 *Point2) *Vector2 {
 
 // Distance between points
 func (p1 *Point2) Distance(p2 *Point2) float64 {
-	v := p1.To(p2)
-	return math.Sqrt(v.Dot(v))
+	return p1.To(p2).Len()
 }
 
 func (p *Point2) String() string {
@@ -33,8 +31,7 @@ func (p1 *Point3) To(p2 *Point3) *Vector3 {
 
 // Distance between points
 func (p1 *Point3) Distance(p2 *Point3) float64 {
-	v := p1.To(p2)
-	return math.Sqrt(v.Dot(v))
+	return p1.To(p2).Len()
 }
 
 func (p *Point3) String() string {
