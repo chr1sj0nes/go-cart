@@ -4,7 +4,7 @@ import (
 	"testing"
 )
 
-func TestPoint2Distance(t *testing.T) {
+func TestPoint2DistPt(t *testing.T) {
 	tests := []struct {
 		p1, p2   Point2
 		expected float64
@@ -14,13 +14,13 @@ func TestPoint2Distance(t *testing.T) {
 	}
 
 	for _, tt := range tests {
-		if actual := tt.p1.Distance(&tt.p2); actual != tt.expected {
-			t.Errorf("Point2.Distance: expected = %f, actual = %f", tt.expected, actual)
+		if actual := tt.p1.DistPt(&tt.p2); actual != tt.expected {
+			t.Errorf("Point2.DistPt: expected = %f, actual = %f", tt.expected, actual)
 		}
 	}
 }
 
-func TestPoint3Distance(t *testing.T) {
+func TestPoint3DistPt(t *testing.T) {
 	tests := []struct {
 		p1, p2   Point3
 		expected float64
@@ -30,8 +30,8 @@ func TestPoint3Distance(t *testing.T) {
 	}
 
 	for _, tt := range tests {
-		if actual := tt.p1.Distance(&tt.p2); actual != tt.expected {
-			t.Errorf("Point3.Distance: expected = %f, actual = %f", tt.expected, actual)
+		if actual := tt.p1.DistPt(&tt.p2); actual != tt.expected {
+			t.Errorf("Point3.DistPt: expected = %f, actual = %f", tt.expected, actual)
 		}
 	}
 }
