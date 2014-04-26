@@ -4,23 +4,6 @@ import (
 	"testing"
 )
 
-func TestLine2DistLn(t *testing.T) {
-	tests := []struct {
-		l1, l2   Line2
-		expected float64
-	}{
-		{*NewLine2(0, 0), *NewLine2(0, 2), 2},
-		{Line2{Vector2{0, 1}, Point2{0, 0}}, Line2{Vector2{0, 1}, Point2{3, 0}}, 3},
-		{*NewLine2(1, 2), *NewLine2(3, 4), 0},
-	}
-
-	for _, tt := range tests {
-		if actual := tt.l1.DistLn(&tt.l2); actual != tt.expected {
-			t.Errorf("Line2.DistLn: expected = %f, actual = %f", tt.expected, actual)
-		}
-	}
-}
-
 func TestLine3DistPt(t *testing.T) {
 	tests := []struct {
 		l        Line3
