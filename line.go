@@ -22,15 +22,6 @@ func (l *Line2) DistPt(p *Point2) float64 {
 	return math.Abs(v.Dot(r)) / v.Len() // project r onto v
 }
 
-// Distance between two lines (zero unless the lines are parallel)
-func (l1 *Line2) DistLn(l2 *Line2) float64 {
-	if l1.U != l2.U {
-		return 0
-	}
-
-	return l1.DistPt(&l2.P)
-}
-
 // Line in 3D space
 type Line3 struct {
 	U Vector3
